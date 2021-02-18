@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  shopName: 'Axxes Shop',
+  production: true,
+  productApi: 'http://localhost:3000'
 };

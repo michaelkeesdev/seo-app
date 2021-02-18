@@ -16,9 +16,20 @@ mat-card {
 }
 
 .product-image {
+  position: relative;
     height: 220px;
     width: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+
+}
+
+.product-image span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.3rem;
+  color: #ff4947;
 }

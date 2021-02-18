@@ -45,6 +45,8 @@
     "*.{js,ts,json}": "prettier --write"
   },
   "dependencies": {
+    "@types/cors": "^2.8.10",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }

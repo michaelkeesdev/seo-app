@@ -1,11 +1,13 @@
 <main container>
     <div class="grid">
-        <mat-card *ngFor="let product of products" class="example-card" [routerLink]="['/detail', product.productId]">
+        <mat-card *ngFor="let product of products$ | async" class="example-card" [routerLink]="['/monitor', product.productId]">
             <mat-card-header>
               <mat-card-title>{{ product.title }}</mat-card-title>
               <mat-card-subtitle>{{ product.brand }}</mat-card-subtitle>
             </mat-card-header>
-            <div class="product-image" [style.background-image]="'url(' + product.image + ')'"></div>
+            <div class="product-image" [style.background-image]="'url(' + product.image + ')'">
+              <span>€ {{ product?.price?.value }}</span>
+            </div>
             <!-- <img mat-card-image [src]="product.image" [alt]="product.title"> -->
             <mat-card-content>
               <p>
