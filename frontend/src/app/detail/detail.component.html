@@ -1,0 +1,31 @@
+<main container>
+    <section ng-if="product" class="product-info">
+        <img [src]="product.image" [alt]="product.title" />
+        <div class="product-details">
+            <div class="main-details">
+                <h2>{{ product.title }}</h2>
+                <span class="price">€ {{ product.price.value }}</span>
+            </div>
+            <p>{{ product.description }}</p>
+            <h3>Specificaties</h3>
+            <div class="specifications">
+                <span class="name">Merk</span>
+                <span class="value">{{ product.brand }}</span>
+                <span class="name">Inch</span>
+                <span class="value">{{ product.inch }}</span>
+                <span class="name">Resolutie</span>
+                <span class="value">{{ product.resolution }}</span>
+                <span class="name">Hz</span>
+                <span class="value">{{ product.hz }}</span>
+                <span class="name">Reactietijd</span>
+                <span class="value">{{ product.reactionTime }}</span>
+                <span class="name">Aantal HDMI aansluitingen</span>
+                <span class="value">{{ product.HDMI }}</span>
+                <span class="name">USB-C</span>
+                <span class="value">{{ product.USBC ? "Ja" : "Nee" }}</span>
+                <span class="name">Speakers</span>
+                <span class="value">{{ product.hasSpeakers ? "Ja" : "Nee" }}</span>
+            </div>
+        </div>
+    </section>
+</main>
