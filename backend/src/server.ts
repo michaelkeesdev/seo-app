@@ -13,7 +13,7 @@ app.get("/monitors", (req: express.Request, res: express.Response) => {
 });
 
 app.get("/monitors/:id", (req: express.Request, res: express.Response) => {
-  res.send(MONITORS[0]);
+  res.send(MONITORS.find(monitor => monitor.productId === req.params.id));
 });
 
 app.listen(PORT, () => {

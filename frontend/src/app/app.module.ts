@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DetailComponent } from './detail/detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DetailComponent } from './detail/detail.component';
     HomeComponent,
     HeaderComponent,
     ContainerDirective,
-    DetailComponent
+    DetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
