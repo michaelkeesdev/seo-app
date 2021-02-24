@@ -6,13 +6,12 @@
               <mat-card-subtitle>{{ product.brand }}</mat-card-subtitle>
             </mat-card-header>
             <div class="product-image" [style.background-image]="'url(' + product.image + ')'">
-              <span>€ {{ product?.price?.value }}</span>
             </div>
-            <!-- <img mat-card-image [src]="product.image" [alt]="product.title"> -->
             <mat-card-content>
               <p>
                 {{ product.description }}
               </p>
+              <p class="price">€ {{ product?.price?.value }}</p>
             </mat-card-content>
         </mat-card>
         <div class="ghost" *ngFor="let i of [0, 1, 2]"></div>
