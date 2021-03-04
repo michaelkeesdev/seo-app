@@ -1,5 +1,5 @@
 export const environment = {
   shopName: 'Axxes Shop',
   production: true,
-  productApi: 'http://localhost:3000'
+  productApi: 'https://axxes-shop-api.herokuapp.com/'
 };
