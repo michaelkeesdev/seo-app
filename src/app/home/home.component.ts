@@ -18,10 +18,20 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductService, private titleService: Title, private meta: Meta) {
     this.products$ = this.productService.getProducts();
     this.titleService.setTitle(environment.shopName);
-    this.meta.addTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants`});
-    this.meta.addTag({name: 'og:image', content: `https://axxes.com/wp-content/themes/axxes/img/layout/logo_new.png`});
-    this.meta.addTag({name: 'og:type', content: 'website'});
-    this.meta.addTag({name: 'og:url', content: environment.url});
+    this.meta.updateTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants`});
+    this.meta.updateTag({name: 'og:description', content: `${environment.shopName} is shop voor axxes IT consultants`});
+    this.meta.updateTag({name: 'og:image', content: `https://axxes.com/wp-content/themes/axxes/img/layout/logo_new.png`});
+    this.meta.updateTag({name: 'og:type', content: 'website'});
+    this.meta.updateTag({name: 'og:url', content: environment.url});
+
+    /*
+    { name: 'keywords', content: 'Angular SEO Integration, Music CRUD, Angular Universal' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'Digamber Singh' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD' },
+      { charset: 'UTF-8' }
+      */
   }
 
   ngOnInit(): void {
