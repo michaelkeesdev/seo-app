@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment.prod';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -15,9 +15,11 @@ import { ProductService } from '../product.service';
 export class HomeComponent implements OnInit {
   products$: Observable<Monitor[]>;
 
-  constructor(private productService: ProductService, private titleService: Title) {
+  constructor(private productService: ProductService, private titleService: Title, private meta: Meta) {
     this.products$ = this.productService.getProducts();
     this.titleService.setTitle(environment.shopName);
+    this.meta.addTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants`});
+    this.meta.addTag({name: 'og:image', content: `https://axxes.com/wp-content/themes/axxes/img/layout/logo_new.png`});
   }
 
   ngOnInit(): void {

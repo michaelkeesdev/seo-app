@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -22,11 +22,18 @@ export class DetailComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService,
     private titleService: Title,
+    private meta: Meta,
     ) {
       this.product$ = this.productService.getProduct(this.route.snapshot.params.id)
       .pipe(
-        tap((product) => this.titleService.setTitle(`${environment.shopName} - ${product.title}`))
+        tap((product) => {
+          this.titleService.setTitle(`${environment.shopName} - ${product.title}`)
+          this.meta.addTag({name: 'description', content: product.description});
+          this.meta.addTag({name: 'og:image', content: product.image});
+        })
       );
+
+
 
     }
 
