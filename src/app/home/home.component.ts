@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
     this.titleService.setTitle(environment.shopName);
     this.meta.addTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants`});
     this.meta.addTag({name: 'og:image', content: `https://axxes.com/wp-content/themes/axxes/img/layout/logo_new.png`});
+    this.meta.addTag({name: 'og:type', content: 'website'});
+    this.meta.addTag({name: 'og:url', content: environment.url});
   }
 
   ngOnInit(): void {

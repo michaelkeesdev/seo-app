@@ -5,7 +5,8 @@
 export const environment = {
   shopName: 'Axxes Shop',
   production: false,
-  productApi: 'localhost:3000'
+  productApi: 'localhost:3000',
+  url: 'https://seo-axxes-app.herokuapp.com'
 };
 
 /*

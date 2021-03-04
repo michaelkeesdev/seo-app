@@ -30,6 +30,8 @@ export class DetailComponent implements OnInit {
           this.titleService.setTitle(`${environment.shopName} - ${product.title}`)
           this.meta.addTag({name: 'description', content: product.description});
           this.meta.addTag({name: 'og:image', content: product.image});
+          this.meta.addTag({name: 'og:type', content: 'website'});
+          this.meta.addTag({name: 'og:url', content: `${environment.url}/monitor/${product.productId}`});
         })
       );
 
