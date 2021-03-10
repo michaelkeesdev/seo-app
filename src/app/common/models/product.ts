@@ -19,4 +19,5 @@ export interface Monitor {
   inStock: boolean;
   isSellable: boolean;
   image: string;
+  meta: any;
 }
