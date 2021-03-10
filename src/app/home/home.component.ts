@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductService, private titleService: Title, private meta: Meta) {
     this.products$ = this.productService.getProducts();
     this.titleService.setTitle(environment.shopName);
-    this.meta.updateTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants`});
-    this.meta.updateTag({name: 'og:description', content: `${environment.shopName} is shop voor axxes IT consultants`});
+    this.meta.updateTag({name: 'description', content: `${environment.shopName} is shop voor axxes IT consultants dat gemaakt is voor de mini-conferentie. Het doel van deze talk is SEO in Angular.`});
+    this.meta.updateTag({name: 'og:description', content: `${environment.shopName} is shop voor axxes IT consultants dat gemaakt is voor de mini-conferentie. Het doel van deze talk is SEO in Angular.`});
     this.meta.updateTag({name: 'og:image', content: `https://axxes.com/wp-content/themes/axxes/img/layout/logo_new.png`});
     this.meta.updateTag({name: 'og:type', content: 'website'});
     this.meta.updateTag({name: 'og:url', content: environment.url});
