@@ -15,9 +15,8 @@ import { ProductService } from '../product.service';
 export class HomeComponent implements OnInit {
   products$: Observable<Monitor[]>;
 
-  constructor(private productService: ProductService, private titleService: Title) {
+  constructor(private productService: ProductService) {
     this.products$ = this.productService.getProducts();
-    this.titleService.setTitle(environment.shopName);
   }
 
   ngOnInit(): void {

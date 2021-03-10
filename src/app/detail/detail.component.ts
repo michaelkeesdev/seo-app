@@ -15,22 +15,14 @@ import { Monitor } from '../common/models/product';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
   product$: Observable<Monitor>;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private titleService: Title,
     ) {
-      this.product$ = this.productService.getProduct(this.route.snapshot.params.id)
-      .pipe(
-        tap((product) => this.titleService.setTitle(`${environment.shopName} - ${product.title}`))
-      );
+      this.product$ = this.productService.getProduct(this.route.snapshot.params.id);
 
     }
-
-  ngOnInit(): void {
-  }
-
 }
