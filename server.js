@@ -7,4 +7,8 @@ app.use(express.static(__dirname + "/dist/seo-basic"));
 // Heroku port
 app.listen(port);
 
+app.all("/*", function (req, res) {
+  res.sendFile(__dirname + "/dist/seo-basic/index.html");
+});
+
 console.log("Running on port: " + port);
